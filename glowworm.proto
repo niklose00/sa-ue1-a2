@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service GlowwormService {
+    rpc SendStatus (Status) returns (Ack);
+    rpc ReceiveStatus (Empty) returns (Status);
+}
+
+message Status {
+    double phase = 1;
+    double natural_frequency = 2;
+}
+
+message Ack {
+    string message = 1;
+}
+
+message Empty {}
